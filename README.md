@@ -39,7 +39,9 @@ const app = new App({
 	}
 });
 ```
-If you modify the property name, the server will hot-update and use the update value.
+If you modify the property name, the server will hot-update and use the updated value.
+
+
 
 
 
