@@ -1,7 +1,7 @@
 # svelte-tutorial-1
 
-
-
+## Create repo from template
+```
 $ npx degit sveltejs/template svelte-tutorial-1
 npx: installed 1 in 2.497s
 > cloned sveltejs/template#master to svelte-tutorial-1
@@ -9,28 +9,71 @@ $ cd svelte-tutorial-1/
 $ node scripts/setupTypeScript.js 
 Converted to TypeScript.
 $ 
+```
+NOTE: apparently the scripts folder is deleted after running this command.
+
+Now install dependencies and run the server:
+```
+npm install
+npm run dev
+```
+
+The last few lines of output from the server:
+```
+  Your application is ready~! 🚀
+
+  - Local:      http://localhost:5000
+  - Network:    Add `--host` to expose
+
+────────────────── LOGS ──────────────────
+```
+
+Pointing browser to above will show the default page from template... a simple "hello world" app.
+
+The main entry point is `src/main.ts`:
+```ts
+const app = new App({
+	target: document.body,
+	props: {
+		name: 'world in 2021!'
+	}
+});
+```
+If you modify the property name, the server will hot-update and use the update value.
 
 
-# Directions to add above to a (new) repo on Github
+
+
+
+## Directions to add above to a (new) repo on Github
+
 1. Create a new repository on GitHub. You can also add a gitignore file, a readme, and a license if you want
  Open Git Bash
-Change the current working directory to your local project.
-Initialize the local directory as a Git repository.
+2. Change the current working directory to your local project.
+3. Initialize the local directory as a Git repository.
+```
 git init
-Add the files to your new local repository. This stages them for the first commit.
+```
+3. Add the files to your new local repository. This stages them for the first commit.
+```
 git add .
- Commit the files that you’ve staged in your local repository.
+```
+4. Commit the files that you’ve staged in your local repository.
+```
 git commit -m "initial commit"
- Copy the HTTPS URL of your newly created repo
+```
+5. Copy the HTTPS URL of your newly created repo
 In the Command prompt, add the URL for the remote repository where your local repository will be pushed.
+```
+git branch -M main
+git remote add origin git@github.com:mandolyte/svelte-tutorial-1.git
+git push -u origin main
+```
 
-git remote add origin remote repository URL
 
-git remote -v
- Push the changes in your local repository to GitHub.
 
-git push -f origin master
-That’s all
+
+
 
 
 # ORIGINAL TEMPLATE README
